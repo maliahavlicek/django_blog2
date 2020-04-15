@@ -14,15 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.views.generic import RedirectView
 from django.views.static import serve
 from .settings import MEDIA_ROOT
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='posts')),
-    path('posts/', include('posts.urls')),
-    path('media/(?P<path>.*)', serve, {'document_root': MEDIA_ROOT}),
+    path('admin/', admin.site.urls, name='admin'),
+    path('', RedirectView.as_view(url='posts/')),
+    path('posts/', include('posts.urls'), name="posts"),
+    path('media/<path:path>', serve, {'document_root': MEDIA_ROOT}),
 ]
