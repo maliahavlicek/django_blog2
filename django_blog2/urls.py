@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', RedirectView.as_view(url='posts/')),
     path('posts/', include('posts.urls'), name="posts"),
-    path('media/?<path:path>', serve, {'document_root': MEDIA_ROOT}),
+    path('media/?P<path>', serve, {'document_root': MEDIA_ROOT}),
 ]
