@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    os.environ.get('HOSTNAME'), "127.0.0.1", 'malia-blog-test-app.herokuapp.com'
+    os.environ.get('HOSTNAME'), "127.0.0.1", "malia-blog-test-app.herokuapp.com"
 ]
 
 # Application definition
