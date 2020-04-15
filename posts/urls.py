@@ -6,7 +6,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', get_posts, name='get_posts'),
-    path('<pk>/', post_detail, name='post_detail'),
+    path('?P<pk>/', post_detail, name='post_detail'),
     path('new/', create_or_edit_post, name='new_post'),
-    path('<pk>/edit/', create_or_edit_post, name='edit_post')
+    path('?P<pk>/edit/', create_or_edit_post, name='edit_post')
 ]
